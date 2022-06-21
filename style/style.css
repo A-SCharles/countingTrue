@@ -8,6 +8,6 @@ body {
     min-height: 97vh;
 }
 
-#values , #next{
+#values , #amount{
    min-height: 35px;
 }

@@ -1,39 +1,34 @@
 const values = document.getElementById("values");
-const nextNo = document.getElementById("next");
-numbers.focus();
+const amount = document.getElementById("amount");
 let arr = [];
 
 const btnaddFalse = document.getElementById("false");
 btnaddFalse.addEventListener("click", () => {
     // Adds False to array
-    arr.push('False')
+    arr.push(false)
     values.innerHTML = arr
 });
 
 const btnaddTrue = document.getElementById("true");
 btnaddTrue.addEventListener("click", () => {
   // Adds True to array
-  arr.push("True");
+  arr.push(true);
   values.innerHTML = arr;
 });
 
-// adds numbers to array on enter
-numbers.addEventListener("keypress", function (event) {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    btnadd.click();
-  }
-});
-
 const btnCalc = document.getElementById("calculate");
-btnCalc.addEventListener("click", () => {
+btnCalc.addEventListener("click", (i, x) => {
+i = arr.filter(Boolean).length
 
+x = arr.length - i
+amount.innerHTML = 'There are ' + i + ' True Values';
+amount.innerHTML += ' and ' + x + ' False Values'
 });
 
 const btnReset = document.getElementById("reset");
 btnReset.addEventListener("click", () => {
   values.innerHTML = "";
-  nextNo.innerHTML = "";
+  amount.innerHTML = "";
   arr = [];
 });
 
